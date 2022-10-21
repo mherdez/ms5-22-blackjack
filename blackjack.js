@@ -43,7 +43,28 @@
 //   )
 // )
 
+// let bajara;
+
+// const crearBaraja = () => {
+//   const valores = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+//   const palo   = ['H', 'C', 'S', 'D'];
+
+//   baraja = [palo.map( tipo =>
+//     valores.map( carta =>
+//       carta+tipo
+//     )
+//   )].flat(2);
+// }
+
+// crearBaraja();
+// baraja.map( carta => document.body.innerHTML += `<img src="./assets/cartas/${carta}.png" alt="">`)
+
+
+const container = document.querySelector('#container');
+const btnSacarCarta = document.querySelector('#btnSacarCarta');
+
 let bajara;
+let numeroCartas = 0;
 
 const crearBaraja = () => {
   const valores = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
@@ -56,5 +77,14 @@ const crearBaraja = () => {
   )].flat(2);
 }
 
+const sacarCarta = (carta) => {
+  container.innerHTML += `<img src="./assets/cartas/${carta}.png" alt="">`;
+  numeroCartas++;
+}
+
 crearBaraja();
-baraja.map( carta => document.body.innerHTML += `<img src="./assets/cartas/${carta}.png" alt="">`)
+
+btnSacarCarta.addEventListener('click', () => {
+  sacarCarta(baraja[numeroCartas]);
+})
+
