@@ -74,7 +74,7 @@ const crearBaraja = () => {
     valores.map( carta =>
       carta+tipo
     )
-  )].flat(2);
+  )].flat(2).sort( () => Math.floor( Math.random() - 0.5 ));
 }
 
 const sacarCarta = (carta) => {
